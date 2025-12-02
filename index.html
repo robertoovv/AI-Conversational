@@ -27,21 +27,22 @@
   <!-- LIBRO -->
   <div class="book-container hidden">
     <div class="book">
-      <!-- Botón volver a portada -->
-      <button id="backToCover" class="back-to-cover-btn" title="Volver a la portada">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-        </svg>
-        <span>Portada</span>
-      </button>
-
-      <!-- Botón índice -->
-      <button id="tocToggle" class="toc-toggle-btn" title="Ver índice">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <span>Índice</span>
-      </button>
+      <!-- Botones superiores -->
+      <div class="top-buttons">
+        <button id="backToCover" class="back-to-cover-btn" title="Volver a la portada">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          <span>Portada</span>
+        </button>
+        
+        <button id="tocToggle" class="toc-toggle-btn" title="Ver índice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <span>Índice</span>
+        </button>
+      </div>
 
       <div class="page single-page">
         <div class="page-glow"></div>
@@ -93,31 +94,35 @@
     </div>
   </div>
 
-  <!-- ÍNDICE LATERAL -->
-  <aside id="toc" class="toc hidden">
+  <!-- ÍNDICE DESPLEGABLE -->
+  <div id="tocPanel" class="toc-panel hidden">
     <div class="toc-header">
-      <h3>Índice</h3>
+      <h3>Índice de capítulos</h3>
       <button id="closeToc" class="close-toc-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
     </div>
-    <ul>
-      <li class="toc-item active" data-chapter="0">Introducción a la IA</li>
-      <li class="toc-item" data-chapter="1">¿Qué es IA Conversacional?</li>
-      <li class="toc-item" data-chapter="2">¿Cómo funciona?</li>
-      <li class="toc-item" data-chapter="3">Historia</li>
-      <li class="toc-item" data-chapter="4">Aplicaciones actuales</li>
-      <li class="toc-item" data-chapter="5">Cómo escribir buenos prompts</li>
-      <li class="toc-item" data-chapter="6">Ventajas y límites</li>
-      <li class="toc-item" data-chapter="7">Ética y seguridad</li>
-      <li class="toc-item" data-chapter="8">Futuro</li>
-      <li class="toc-item" data-chapter="9">Actividades prácticas</li>
-      <li class="toc-item" data-chapter="10">Glosario</li>
-      <li class="toc-item" data-chapter="11">Referencias</li>
+    <ul class="toc-list">
+      <li class="toc-item active" data-chapter="0">¿Qué es la Inteligencia Artificial?</li>
+      <li class="toc-item" data-chapter="1">¿Qué es la IA Conversacional?</li>
+      <li class="toc-item" data-chapter="2">¿Cómo funciona un modelo conversacional?</li>
+      <li class="toc-item" data-chapter="3">Historia de la IA Conversacional</li>
+      <li class="toc-item" data-chapter="4">¿Por qué es tan importante la IA Conversacional?</li>
+      <li class="toc-item" data-chapter="5">Aplicaciones reales en la vida cotidiana</li>
+      <li class="toc-item" data-chapter="6">Cómo escribir buenos prompts</li>
+      <li class="toc-item" data-chapter="7">Ventajas y límites de la IA Conversacional</li>
+      <li class="toc-item" data-chapter="8">Ética y seguridad en la IA</li>
+      <li class="toc-item" data-chapter="9">La IA Conversacional en el futuro</li>
+      <li class="toc-item" data-chapter="10">Actividades prácticas para jóvenes</li>
+      <li class="toc-item" data-chapter="11">Glosario esencial</li>
     </ul>
-  </aside>
+  </div>
+
+  
+  <!-- OVERLAY PARA CERRAR ÍNDICE -->
+  <div id="tocOverlay" class="toc-overlay hidden"></div>
 
   <div class="ambient-light"></div>
   <script src="script.js"></script>

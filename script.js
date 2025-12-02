@@ -2,30 +2,32 @@
 const bookContent = [
   {
     number: "01",
-    title: "Introducción a la IA",
+    title: "¿Qué es la Inteligencia Artificial?",
     content: [
-      "La Inteligencia Artificial (IA) es como darle superpoderes a las computadoras: les enseñamos a pensar, aprender y tomar decisiones como los humanos, pero a velocidad loca.",
-      "<strong>IA Débil vs IA Fuerte:</strong><br><br><strong>IA Débil:</strong> Especialista (como TikTok que sabe qué videos te gustan)<br><strong>IA Fuerte:</strong> Multitalento (todavía no existe, sería como Jarvis de Iron Man)"
+      "La Inteligencia Artificial (IA) es la disciplina que busca que las máquinas logren realizar tareas que normalmente requieren inteligencia humana: aprender, tomar decisiones, resolver problemas, entender lenguaje, identificar imágenes o adaptarse a nuevas situaciones. Aunque parezca un concepto moderno, la IA es el resultado de décadas de investigación en matemáticas, computación, estadística y psicología.",
+      "En la vida cotidiana, usamos IA constantemente sin darnos cuenta. Cuando TikTok te recomienda vídeos que parecen hechos “a tu medida”, cuando Netflix te sugiere series basadas en lo que has visto, o cuando Google Maps calcula la ruta más rápida, estás interactuando con sistemas de IA. Estas tecnologías analizan tus comportamientos y aprenden patrones que les permiten ofrecer resultados más útiles.",
+      "La IA no piensa ni siente como un humano; no posee intenciones ni conciencia. Funciona mediante algoritmos que procesan datos y encuentran patrones que le permiten “predecir” o tomar decisiones. Por eso, es importante entender que la IA es una herramienta poderosa, pero sigue siendo una herramienta: necesita instrucciones, límites, supervisión y un uso responsable."
     ],
     special: "example-box",
-    specialContent: `<h3>🎮 Ejemplos que usas TODO EL TIEMPO:</h3>
+    specialContent: `<h3>🎮 Ejemplos cotidianos de IA que usas TODO EL TIEMPO:</h3>
       <ul>
-        <li><strong>Filtros de IG:</strong> Los que te ponen orejas de perro usan IA para reconocer tu cara</li>
-        <li><strong>Autocorrect:</strong> Aprende cómo escribes para corregirte mejor</li>
-        <li><strong>TikTok:</strong> Su algoritmo es IA que aprende qué te gusta en 15 min</li>
-        <li><strong>Videojuegos:</strong> Los enemigos se adaptan a tu estilo de juego</li>
-        <li><strong>Spotify:</strong> Descubre semanal = IA creando tu playlist perfecta</li>
+        <li><strong>TikTok:</strong> Su algoritmo aprende qué videos te gustan en 15 minutos</li>
+        <li><strong>Netflix:</strong> Te sugiere series basadas en lo que has visto</li>
+        <li><strong>Google Maps:</strong> Calcula la ruta más rápida en tiempo real</li>
+        <li><strong>Instagram:</strong> Los filtros usan IA para reconocer tu cara</li>
+        <li><strong>Spotify:</strong> Crea playlists que parecen leer tu mente</li>
       </ul>
       <br>
-      <h3>🧠 ¿Cómo funciona esto mágicamente?</h3>
-      <p>La IA analiza millones de datos sobre ti: qué miras, cuánto tiempo, qué compartes, qué ignoras... y encuentra patrones. Es como tener un amigo que te observa tanto que sabe qué vas a decir antes de que lo digas.</p>`
+      <h3>🧠 ¿Cómo funciona esta "magia"?</h3>
+      <p>La IA analiza millones de datos sobre ti: qué miras, cuánto tiempo, qué compartes, qué ignoras... y encuentra patrones. Es como tener un amigo que te observa tanto que sabe qué vas a decir antes de que lo digas, pero en versión supercomputadora.</p>`
   },
   {
     number: "02",
-    title: "¿Qué es IA Conversacional?",
+    title: "¿Qué es la IA Conversacional?",
     content: [
-      "Es como tener un amigo virtual que <strong>SIEMPRE</strong> está para hablar, responder y ayudarte con tareas. ¡Pero no necesita dormir ni comer!",
-      "La diferencia entre los chatbots viejos y los modelos modernos como ChatGPT es abismal. Mientras los primeros solo podían responder lo que les habían programado, los nuevos pueden mantener conversaciones reales, crear contenido original y adaptarse a tu estilo."
+      "La IA conversacional es un tipo de inteligencia artificial diseñada para comunicarse con personas usando lenguaje natural, ya sea por texto o por voz. Su objetivo principal es mantener una conversación fluida, coherente y útil, como si estuvieras hablando con otra persona.",
+      "Los modelos actuales, como ChatGPT, Llama y Claude, son capaces de comprender matices, seguir un hilo de conversación, adaptarse a tu estilo de comunicación e incluso resolver problemas complejos siguiendo instrucciones. A diferencia de los antiguos chatbots que respondían con frases predefinidas, estos modelos pueden generar respuestas nuevas que nunca antes habían sido escritas, basándose únicamente en lo aprendido.",
+      "La IA conversacional se utiliza en una enorme variedad de áreas: atención médica, educación, entretenimiento, atención al cliente, desarrollo de software, creación artística, videojuegos, entre muchas otras. Los jóvenes encuentran en ella una herramienta para estudiar mejor, aprender nuevas habilidades, diseñar proyectos creativos, emprender o simplemente explorar ideas sin límites."
     ],
     special: "comparison-grid",
     specialContent: `<div class="chatbot-old">
@@ -43,15 +45,15 @@ const bookContent = [
         <li>Aprenden contigo</li>
         <li>Contexto y conversación real</li>
         <li>Creativos y útiles</li>
-        <li>Entienden el lenguaje natural</li>
+        <li>Entienden lenguaje natural</li>
       </ul>
     </div>
     <br>
     <h3>📱 ¿Dónde los encuentras en tu vida diaria?</h3>
     <ul>
+      <li><strong>ChatGPT:</strong> Tu asistente universal para todo</li>
       <li><strong>Snapchat My AI:</strong> Tu amigo virtual que responde a tus historias</li>
       <li><strong>Discord Clyde:</strong> Moderación y ayuda en servidores</li>
-      <li><strong>WhatsApp Business:</strong> Atención al cliente instantánea</li>
       <li><strong>Asistentes de estudio:</strong> Explicaciones personalizadas, resúmenes, ejercicios</li>
     </ul>`
   },
@@ -59,9 +61,13 @@ const bookContent = [
     number: "03",
     title: "¿Cómo funciona un modelo conversacional?",
     content: [
-      "Imagina que el modelo es como un cerebro artificial que ha leído TODO internet. Cuando le preguntas algo, no busca respuestas preparadas, sino que <strong>predice palabra por palabra</strong> lo que debería decir, basándose en lo que aprendió.",
-      "<strong>¿Qué es un token?</strong> Es la unidad mínima que entiende el modelo. Puede ser una palabra, parte de una palabra o incluso un emoji. Por eso a veces 'se queda pensando' a mitad de palabra.",
-      "<strong>El truco del 'prompt':</strong> Tu pregunta es como una <strong>orden mágica</strong>. Si dices: 'Explícame...' vs 'Explícame como si tuviera 10 años...' ¡la respuesta cambia completamente!"
+      "Para comprender cómo funcionan estos modelos, es importante saber que no “piensan” ni “entienden” el mundo como lo hacemos los humanos. Lo que hacen es detectar patrones estadísticos en grandes cantidades de texto.",
+      "Un modelo conversacional se entrena leyendo enormes volúmenes de información: libros, artículos, páginas web, código, conversaciones, etc. A medida que procesa estos datos, va aprendiendo relaciones entre palabras, frases y conceptos. Este proceso se divide en varias etapas:",
+      "<strong>1. Entrenamiento:</strong> Durante esta etapa, el modelo observa millones de ejemplos. Aprende que después de la frase “Érase una vez” suele venir una historia, o que la palabra “perro” se asocia a “animal”, “mascota”, “ladrar”, etc. No memoriza textos exactos; más bien aprende patrones y probabilidades.",
+      "<strong>2. Inferencia:</strong> Es el momento en el que tú le haces una pregunta. El modelo intenta predecir cuál es la mejor secuencia de palabras para responderte, basándose en todo lo que aprendió. Esto ocurre en milisegundos.",
+      "<strong>3. Ajuste fino (fine-tuning):</strong> Después del entrenamiento inicial, los desarrolladores ajustan el modelo con ejemplos diseñados por humanos para que responda de forma útil, segura y coherente.",
+      "<strong>4. Aprendizaje por refuerzo basado en retroalimentación humana (RLHF):</strong> Personas reales califican respuestas del modelo y este aprende cuáles son mejores. Así se vuelve más conversacional, más seguro y más útil.",
+      "En resumen: los modelos conversacionales funcionan como predictores avanzados que transforman patrones en respuestas."
     ],
     special: "example-box",
     specialContent: `<h3>🔍 Proceso paso a paso (simplificado):</h3>
@@ -83,17 +89,23 @@ const bookContent = [
     number: "04",
     title: "Historia de la IA Conversacional",
     content: [
-      "<strong>1966 - ELIZA:</strong> La primera 'terapeuta' digital. Solo repetía lo que decías con preguntas, ¡pero la gente pensaba que entendía!<br><br><strong>2011 - Siri:</strong> Llegó al iPhone y todos empezaron a hablar con sus teléfonos.",
-      "<strong>2022 - ChatGPT:</strong> Revolución total. De repente, todos tenían acceso a una IA que podía ayudar con tareas, crear historias, resolver problemas...<br><br><strong>Hoy:</strong> Competencia feroz entre GPT, Claude, Gemini y otros."
+      "La idea de hablar con máquinas comenzó hace más de 60 años. En 1966, Joseph Weizenbaum creó ELIZA, un programa capaz de simular una conversación terapéutica usando reglas simples. Aunque primitivo, demostró que la interacción humano-máquina era posible.",
+      "En los años siguientes surgieron chatbots con enfoques más sofisticados, pero seguían basados en reglas rígidas. Programas como ALICE o Cleverbot ganaron popularidad, pero carecían de verdadera comprensión.",
+      "El cambio radical llegó con los asistentes inteligentes: Siri (2011), Google Assistant (2016) y Alexa (2014). Permitían controlar dispositivos y responder preguntas básicas con la voz.",
+      "La verdadera revolución comenzó con la llegada de los Modelos de Lenguaje Grande (LLMs), como GPT-3 en 2020. Por primera vez, una IA podía generar texto coherente, adaptarse al contexto y realizar tareas complejas con alto nivel de calidad.",
+      "Desde entonces, cada año aparecen nuevas versiones más potentes, con mejor razonamiento, mayor capacidad de comprensión y usos más amplios."
     ],
     special: "app-box",
     specialContent: `<h3>🚀 La evolución de los modelos:</h3>
       <ul>
-        <li><strong>GPT-1 (2018):</strong> 117M de parámetros</li>
-        <li><strong>GPT-2 (2019):</strong> 1.5B de parámetros - ¡tan potente que no lo liberaron completo!</li>
-        <li><strong>GPT-3 (2020):</strong> 175B de parámetros - Salto cualitativo</li>
-        <li><strong>GPT-4 (2023):</strong> Multimodal y mucho más preciso</li>
-        <li><strong>Futuro:</strong> ¿GPT-5? Nadie sabe, pero será increíble</li>
+        <li><strong>1966 - ELIZA:</strong> La primera "terapeuta" digital</li>
+        <li><strong>1995 - ALICE:</strong> Chatbot con reglas más avanzadas</li>
+        <li><strong>2011 - Siri:</strong> Asistente por voz en iPhone</li>
+        <li><strong>2014 - Alexa:</strong> Asistente para el hogar</li>
+        <li><strong>2016 - Google Assistant:</strong> Integración con servicios Google</li>
+        <li><strong>2020 - GPT-3:</strong> Salto cualitativo en generación de texto</li>
+        <li><strong>2022 - ChatGPT:</strong> Revolución popular de la IA conversacional</li>
+        <li><strong>2023 - GPT-4:</strong> Multimodal y mucho más preciso</li>
       </ul>
       <br>
       <h3>📅 Línea del tiempo divertida:</h3>
@@ -101,13 +113,39 @@ const bookContent = [
   },
   {
     number: "05",
-    title: "Aplicaciones que te van a flipar",
+    title: "¿Por qué es tan importante la IA Conversacional?",
     content: [
-      "<strong>🎮 Videojuegos:</strong> NPCs que recuerdan tus decisiones y tienen conversaciones únicas. Juegos que crean historias mientras juegas. Ejemplo: En 'AI Dungeon', la historia se genera en tiempo real según tus acciones.",
-      "<strong>📚 Educación personalizada:</strong> Profesores virtuales que se adaptan a tu ritmo, explican con ejemplos de tus intereses y nunca se cansan de repetir. Pueden crear ejercicios específicos para tus debilidades."
+      "La IA conversacional democratiza el acceso al conocimiento. Significa que cualquier joven, sin importar su contexto, puede tener acceso a:",
+      "• Un tutor personal disponible 24/7<br>• Un asistente creativo<br>• Un compañero para practicar idiomas<br>• Un entrenador para aprender nuevas habilidades<br>• Un motor para explorar ideas científicas, artísticas o tecnológicas",
+      "Además, permite automatizar tareas repetitivas, mejorar la productividad y potenciar la creatividad humana. Pero lo más importante es que abre oportunidades. Jóvenes que antes no tenían acceso a cursos de programación, asesorías académicas o aprendizaje autodidacta ahora pueden aprender prácticamente cualquier cosa con una herramienta accesible e intuitiva."
     ],
     special: "example-box",
-    specialContent: `<h3>💡 Startups juveniles reales:</h3>
+    specialContent: `<h3>🌍 Democratización del conocimiento:</h3>
+      <ul>
+        <li><strong>Acceso gratuito:</strong> Cualquier persona con internet puede acceder</li>
+        <li><strong>Personalización:</strong> Se adapta a tu nivel y estilo de aprendizaje</li>
+        <li><strong>Multilingüe:</strong> Habla casi todos los idiomas</li>
+        <li><strong>24/7:</strong> Siempre disponible, nunca se cansa</li>
+        <li><strong>Judgement-free:</strong> No juzga tus preguntas "tontas"</li>
+      </ul>
+      <br>
+      <h3>📈 Oportunidades para jóvenes:</h3>
+      <p>• Aprender programación sin profesor<br>• Crear arte sin saber dibujar<br>• Escribir música sin conocer teoría<br>• Emprender sin capital inicial<br>• Estudiar para exámenes con tutor personal</p>`
+  },
+  {
+    number: "06",
+    title: "Aplicaciones reales en la vida cotidiana",
+    content: [
+      "La IA conversacional está en casi todos los sectores:",
+      "<strong>📚 Educación:</strong><br>• Explica temas difíciles con ejemplos personalizados.<br>• Crea resúmenes, mapas conceptuales, ejercicios.<br>• Ayuda a preparar exámenes o exposiciones.",
+      "<strong>🎨 Creatividad:</strong><br>• Genera historias, canciones, poemas, guiones.<br>• Ayuda a diseñar personajes o mundos ficticios.<br>• Inspira ideas para videos o proyectos artísticos.",
+      "<strong>💻 Programación:</strong><br>• Explica código.<br>• Sugiere soluciones.<br>• Detecta errores.<br>• Genera scripts para automatizar tareas.",
+      "<strong>📞 Atención al cliente:</strong><br>Chatbots que resuelven dudas, procesan pedidos, dan soporte técnico o realizan trámites.",
+      "<strong>🏥 Salud (uso responsable):</strong><br>Sistemas que brindan acompañamiento emocional o apoyo básico, aunque nunca sustituyen a un profesional.",
+      "<strong>🎮 Videojuegos:</strong><br>NPCs que responden de manera dinámica y ofrecen experiencias más inmersivas."
+    ],
+    special: "example-box",
+    specialContent: `<h3>💡 Startups juveniles reales con IA:</h3>
       <ul>
         <li><strong>Teen crea app:</strong> Usó IA para generar ideas y código, vendió 1000 descargas</li>
         <li><strong>Tutor IA:</strong> Estudiante creó chatbot para ayudar con mates, ahora lo usan 50 compañeros</li>
@@ -115,20 +153,21 @@ const bookContent = [
         <li><strong>Contenido:</strong> Gestiona redes sociales de negocios locales usando IA</li>
       </ul>
       <br>
-      <h3>🎨 Creatividad aumentada:</h3>
-      <ul>
-        <li><strong>Música:</strong> Componer canciones en cualquier estilo</li>
-        <li><strong>Historias:</strong> Crear mundos y personajes únicos</li>
-        <li><strong>Arte:</strong> Generar imágenes conceptuales</li>
-        <li><strong>Código:</strong> Crear tus primeros juegos y apps</li>
-      </ul>`
+      <h3>🎯 Ideas para tu próximo proyecto:</h3>
+      <p>• Asistente de estudio personalizado<br>• Generador de historias interactivas<br>• Mentor de idiomas con conversación real<br>• Tutor de matemáticas que explica con memes<br>• App que resume libros en formato TikTok</p>`
   },
   {
-    number: "06",
-    title: "Cómo escribir prompts que funcionan",
+    number: "07",
+    title: "Cómo escribir buenos prompts",
     content: [
-      "Un <strong>prompt</strong> es como una receta: mal escrito, da pena. Bien escrito, ¡es magia!<br><br><strong>La fórmula secreta:</strong><br>🎭 <strong>Rol</strong> + 🎯 <strong>Objetivo</strong> + 📋 <strong>Contexto</strong> + 📝 <strong>Formato</strong>",
-      "<strong>Ejemplo malo:</strong> 'Cuéntame sobre historia'<br><strong>Ejemplo bueno:</strong> 'Actúa como un profesor de 4º de ESO. Explícame la Guerra Civil española usando analogías con TikTok y youtubers. Usa emojis y hazlo en 10 líneas.'"
+      "El prompting es la habilidad de dar instrucciones claras a la IA. Un buen prompt puede transformar la calidad de la respuesta.",
+      "Estructura útil para prompts:",
+      "<strong>🎭 Rol:</strong> Define quién debe ser la IA.<br>“Eres un profesor de matemáticas que explica a jóvenes.”",
+      "<strong>🎯 Tarea:</strong> Qué debe hacer.<br>“Explícame cómo resolver ecuaciones cuadráticas.”",
+      "<strong>📋 Contexto:</strong> Para qué lo necesitas.<br>“Lo necesito para estudiar para un examen mañana.”",
+      "<strong>📝 Estilo y formato:</strong> Cómo debe presentarse.<br>“Hazlo en 3 párrafos con ejemplos sencillos.”",
+      "<strong>🚫 Restricciones:</strong> Lo que debe evitar.<br>“No uses lenguaje técnico difícil.”",
+      "El arte de pedir es el arte de obtener mejores respuestas."
     ],
     special: "app-box",
     specialContent: `<h3>📋 Plantillas de prompts mágicos:</h3>
@@ -143,14 +182,19 @@ const bookContent = [
       <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 15px 0;">
         <strong>Para resumir:</strong><br>
         "Resume esto en 3 emojis y una frase de TikTok que suene trending"
-      </div>`
+      </div>
+      <br>
+      <h3>🎯 Ejemplo de transformación:</h3>
+      <p><strong>Malo:</strong> "Cuéntame sobre historia"<br>
+      <strong>Bueno:</strong> "Actúa como un profesor de 4º de ESO. Explícame la Guerra Civil española usando analogías con TikTok y youtubers. Usa emojis y hazlo en 10 líneas."</p>`
   },
   {
-    number: "07",
-    title: "Ventajas y límites (muy importantes)",
+    number: "08",
+    title: "Ventajas y límites de la IA Conversacional",
     content: [
       "<strong>✅ Ventajas que te van a salvar:</strong><br>• Disponible 24/7 (no como tu profe)<br>• No juzga tus preguntas 'tontas'<br>• Puede explicar mil veces sin enfadarse<br>• Ayuda con creatividad bloqueada<br>• Gratuito o muy barato<br>• Se adapta a tu estilo de aprendizaje",
-      "<strong>❌ Límites que debes conocer:</strong><br>• Puede inventar 'fakts' que suenan reales<br>• No tiene sentido común humano<br>• No reemplaza el pensamiento crítico<br>• A veces es como hablar con un político: muchas palabras, poca sustancia<br>• Puede tener sesgos de los datos con los que entrenó<br>• No entiende emociones como los humanos"
+      "<strong>❌ Límites que debes conocer:</strong><br>• Puede inventar 'fakts' que suenan reales<br>• No tiene sentido común humano<br>• No reemplaza el pensamiento crítico<br>• A veces es como hablar con un político: muchas palabras, poca sustancia<br>• Puede tener sesgos de los datos con los que entrenó<br>• No entiende emociones como los humanos",
+      "Entender estos límites ayuda a usar la IA de forma más crítica y responsable."
     ],
     special: "example-box",
     specialContent: `<h3>🚨 Casos de "IA fallando graciosamente":</h3>
@@ -164,11 +208,15 @@ const bookContent = [
       <p><strong>Moral:</strong> Verifica siempre información importante, especialmente para estudios o decisiones importantes!</p>`
   },
   {
-    number: "08",
-    title: "Ética y seguridad para jóvenes",
+    number: "09",
+    title: "Ética y seguridad en la IA",
     content: [
-      "<strong>🔒 Tu privacidad importa:</strong> Todo lo que escribes puede usarse para entrenar el modelo. No compartas contraseñas, direcciones, números de teléfono, o información personal que pueda identificarte.",
-      "<strong>⚖️ Sesgos que pueden afectarte:</strong> Los modelos aprenden de internet, incluyendo prejuicios sobre género, raza, orientación, etc. Si notas respuestas discriminatorias o injustas, ¡denúncialas!<br><br><strong>🎭 Deepfakes y desinformación:</strong> La IA puede crear textos, imágenes y voces falsas que parecen reales. Aprende a detectarlas y no participes en su difusión."
+      "A medida que la IA avanza, también lo hacen los desafíos éticos. Es necesario desarrollar conciencia crítica sobre:",
+      "<strong>🔒 Privacidad:</strong><br>¿Qué datos compartes? ¿Quién los usa?<br>Es importante no revelar información personal sensible.",
+      "<strong>⚖️ Sesgos:</strong><br>La IA aprende del mundo y, por lo tanto, puede repetir estereotipos o discriminación si no está bien diseñada.",
+      "<strong>📰 Fake news y desinformación:</strong><br>La IA puede generar información convincente, por lo que debemos verificar datos y practicar pensamiento crítico.",
+      "<strong>🌍 Impacto social:</strong><br>Desde trabajos automatizados hasta nuevas oportunidades laborales, la IA transformará la sociedad.",
+      "La ética en IA significa usar la tecnología para crear valor, no para dañar."
     ],
     special: "app-box",
     specialContent: `<h3>📱 Código de ética joven-IA:</h3>
@@ -190,11 +238,13 @@ const bookContent = [
       </ul>`
   },
   {
-    number: "09",
-    title: "El futuro de la IA en tu vida",
+    number: "10",
+    title: "La IA Conversacional en el futuro",
     content: [
-      "<strong>🚀 Profesiones que NO existen aún:</strong> Prompt Engineer, AI Ethicist, Human-AI Interaction Designer, AI Personality Trainer, Algorithm Auditor. ¡Podrías ser pionero en una de ellas!<br><br><strong>🏫 Educación 2030:</strong> Profesores IA que conocen tu estilo de aprendizaje perfectamente, clases personalizadas al instante, exámenes que se adaptan a tu nivel en tiempo real.",
-      "<strong>💼 Trabajo del futuro:</strong> Tu jefe será humano, pero tus compañeros serán IA. Aprenderás a delegar tareas a asistentes virtuales y a revisar su trabajo, como un supervisor de robots.<br><br><strong>🏠 Vida diaria:</strong> Asistentes que conocen tus emociones, te sugieren qué estudiar, cuándo descansar, qué comer, y te ayudan a mantener relaciones saludables."
+      "En los próximos años, veremos sistemas capaces de:",
+      "• Entender mejor el contexto emocional<br>• Adaptarse a cada usuario de forma profunda<br>• Combinar texto, voz, imágenes y video<br>• Colaborar con estudiantes, docentes, emprendedores y científicos<br>• Generar experiencias educativas hiperpersonalizadas",
+      "En medicina ayudará a diagnosticar, en ingeniería a diseñar, en arte a crear y en videojuegos a vivir mundos más inmersivos.",
+      "Los jóvenes no solo serán usuarios, sino creadores de estas tecnologías. El futuro lo construiremos entre todos, y la IA conversacional será nuestra herramienta más poderosa."
     ],
     special: "example-box",
     specialContent: `<h3>🔮 Predicciones para tu generación:</h3>
@@ -217,59 +267,69 @@ const bookContent = [
       </div>`
   },
   {
-    number: "10",
-    title: "Actividades prácticas para probar YA",
+    number: "11",
+    title: "Actividades prácticas para jóvenes",
     content: [
-      "<strong>🎲 Aventura interactiva:</strong> 'Crea una historia de aventuras donde yo sea el protagonista. Voy en una misión para salvar el mundo de [tema que estés estudiando]. Dame opciones A, B, C en cada situación.'",
-      "<strong>🧠 Estudio gamificado:</strong> 'Convierte estos apuntes de [materia] en un juego de preguntas tipo Trivial Pursuit. Hazlo competitivo con puntos y niveles.'<br><br><strong>🎨 Proyecto creativo:</strong> 'Diseña un videojuego indie con personajes únicos, historia épica y mecánicas innovadoras. Incluye arte conceptual y soundtrack.'",
-      "<strong>💡 Startup simulator:</strong> 'Tengo 16 años y quiero crear mi primera empresa. Ayúdame a idear un negocio digital que resuelva un problema real en mi instituto. Dame el plan de negocio completo.'"
+      
     ],
     special: "app-box",
-    specialContent: `<h3>🎯 Reto creativo semanal:</h3>
-      <div style="display: grid; gap: 15px;">
-        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
-          <strong>Semana 1:</strong> Crea un personaje con IA y mantén conversación diaria
-        </div>
-        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
-          <strong>Semana 2:</strong> Inventa un juego de mesa con reglas creadas por IA
-        </div>
-        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
-          <strong>Semana 3:</strong> Escribe una canción sobre [tema] con estilo de tu artista favorito
-        </div>
-        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px;">
-          <strong>Semana 4:</strong> Diseña tu app ideal y pide a IA que te ayude con el plan
-        </div>
-      </div>
-      <br>
-      <h3>🎮 Mini-juegos con IA:</h3>
+    specialContent: `<!---->
+<div class="page single-page">
+  <div class="page-glow"></div>
+
+  <main class="page-content">
+    <!-- Glosario -->
+    <div class="glossary-box">
+      <h3>📚 Palabras que ya sabes usar:</h3>
       <ul>
-        <li><strong>Adivina quién:</strong> "Piensa en un personaje famoso y házmelo adivinar con preguntas"</li>
-        <li><strong>Historias locas:</strong> "Dame 3 palabras al azar y crearé una historia con ellas"</li>
-        <li><strong>Debate:</strong> "Argumenta a favor de algo que odias y viceversa"</li>
-        <li><strong>Traductor divertido:</strong> "Traduce esta frase pasando por 5 idiomas y volviendo al español"</li>
-      </ul>`
+        <li><strong>IA Generativa:</strong> IA que crea contenido (texto, imágenes, música…)</li>
+        <li><strong>LLM:</strong> Modelo de lenguaje grande que entiende y genera texto</li>
+        <li><strong>Token:</strong> Fragmento mínimo de texto (palabra, sílaba, emoji)</li>
+        <li><strong>Prompt:</strong> Instrucción que le das a la IA</li>
+        <li><strong>Sesgo:</strong> Tendencia injusta aprendida de los datos</li>
+        <li><strong>Fine-tuning:</strong> Entrenamiento extra para especializar al modelo</li>
+      </ul>
+    </div>
+
+    <!-- Actividad integrada -->
+    <div class="activity-card">
+      <div class="activity-icon">💬</div>
+      <h3>Crear mi primer chatbot</h3>
+      <p>Paso a paso, sin código, con herramientas gratuitas. Perfecto para principiantes.</p>
+      <a href="chatbot-activity.html" class="activity-btn" target="_blank">
+        Ir a la actividad →
+      </a>
+    </div>
+
+    <!-- Frases para impresionar -->
+    <div class="example-box">
+      <h4>Frases para impresionar a tus amigos:</h4>
+      <div class="cool-phrase">"Estoy ajustando la temperature del modelo para obtener respuestas más creativas"</div>
+      <div class="cool-phrase">"El embedding de ese concepto está muy bien representado en el espacio vectorial"</div>
+    </div>
+  </main>
+
+</div>`
   },
   {
-    number: "10",
-    title: "Glosario para sonar pro",
+    number: "12",
+    title: "Glosario esencial",
     content: [
-      "<strong>Modelo de lenguaje:</strong> Como un diccionario mágico que no solo define palabras, sino que entiende cómo se relacionan entre sí y puede generar nuevas combinaciones.",
-      "<strong>Token:</strong> La unidad mínima que entiende el modelo. Puede ser 'hola', 'perro' o incluso 'per' si la palabra está dividida. ¡Los emojis también son tokens!<br><br><strong>Machine Learning:</strong> Enseñar a ordenadores a aprender sin programar cada paso. Como enseñar a un perro, pero el perro es una computadora y los trucos son patrones.",
-      "<strong>Inferencia:</strong> Cuando el modelo usa lo que aprendió para responder. Como cuando tú usas tu experiencia para resolver un problema nuevo.<br><br><strong>Dataset:</strong> El buffet de información con el que se alimenta la IA. Cuanto más variado y nutritivo, mejor 'aprende' el modelo."
+      "Explicaciones claras para términos clave:",
+      "<strong>🤖 IA Generativa:</strong> IA que crea contenido (texto, imágenes, música, etc.)",
+      "<strong>📖 LLM:</strong> Modelo de lenguaje grande capaz de generar y comprender texto",
+      "<strong>🧩 Token:</strong> Fragmento de texto usado en el procesamiento (puede ser una palabra, parte de una palabra, o un emoji)",
+      "<strong>💬 Prompt:</strong> Instrucción que le das a la IA",
+      "<strong>🎯 Inferencia:</strong> Momento en que la IA genera una respuesta",
+      "<strong>⚖️ Sesgo:</strong> Tendencia injusta o inclinación aprendida de los datos",
+      "<strong>🧠 Red Neuronal:</strong> Modelo inspirado en el cerebro humano",
+      "<strong>🔧 Fine-tuning:</strong> Entrenamiento adicional para mejorar el modelo en tareas específicas",
+      "<strong>📊 Datos de entrenamiento:</strong> Información usada para enseñar a la IA",
+      "<strong>📝 Contexto:</strong> Información previa de la conversación que ayuda a entender mejor",
+      "<strong>🌈 Modelo multimodal:</strong> Modelo que entiende más de un tipo de dato (texto, imagen, audio)"
     ],
     special: "example-box",
-    specialContent: `<h3>🤓 Palabras que impresionan:</h3>
-      <ul>
-        <li><strong>Bias (sesgo):</strong> Cuando la IA tiene favoritos (y no debería)</li>
-        <li><strong>Fine-tuning:</strong> Especializar un modelo para una tarea específica</li>
-        <li><strong>Prompt engineering:</strong> El arte de hacer preguntas mágicas</li>
-        <li><strong>Alucinación:</strong> Cuando la IA inventa cosas con total confianza</li>
-        <li><strong>Transformer:</strong> La arquitectura que revolucionó la IA</li>
-        <li><strong>Embedding:</strong> Representar palabras como números para que la IA entienda</li>
-        <li><strong>Temperature:</strong> Qué tan creativa o predecible es la IA (0.1 = aburrida, 1.0 = loca)</li>
-      </ul>
-      <br>
-      <h3>📚 Frases para impresionar a tus amigos:</h3>
+    specialContent: `<h3>📚 Frases para impresionar a tus amigos:</h3>
       <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 15px 0;">
         "Estoy ajustando la temperature del modelo para obtener respuestas más creativas"
       </div>
@@ -278,61 +338,48 @@ const bookContent = [
       </div>
       <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 15px 0;">
         "Cuidado con el sesgo de confirmación en los datos de entrenamiento"
-      </div>`
+      </div>
+      <br>
+      <h3>🎓 Tu misión: ¡Úsalas con sabiduría!</h3>
+      <p>Ahora que conoces estos términos, eres parte de la comunidad de personas que entienden cómo funciona la IA. Comparte este conocimiento y ayuda a otros a entender esta tecnología que está cambiando el mundo.</p>`
+  },{
+    number: "12",
+    title: "Realidad Aumentada + IA conversacional",
+    content: [
+      "La Realidad Aumentada (RA) superpone objetos digitales al mundo real a través de tu cámara. Al combinarla con IA conversacional, puedes crear experiencias donde personajes 3D hablan contigo en tiempo real.",
+      "En esta actividad construirás un personaje 3D que aparece en tu habitación y responde a tus preguntas. No necesitas programar: solo configurar y probar.",
+      "Paso a paso: 1) Activa la cámara RA, 2) Coloca tu modelo 3D, 3) Habla con él/ella, 4) La IA genera la respuesta y la muestra en pantalla.",
+      "WebXR + Three.js hacen posible la RA desde el navegador. OpenAI (o cualquier LLM) genera las respuestas. El resultado: un asistente 3D que vive en tu casa."
+    ],
+    special: "activity-ra",
+    specialContent: `<div class="activity-card">
+      <div class="activity-icon">🥽</div>
+      <h3>Actividad: RA + IA conversacional</h3>
+      <p>Crea un personaje 3D que aparece en tu habitación y habla contigo en tiempo real.</p>
+      <a href="RA-activity.html" class="activity-btn" target="_blank">Ir a la actividad →</a>
+    </div>`
   },
   {
-    number: "11",
-    title: "Referencias",
+    number: "13",
+    title: "Referencias (APA 7)",
     content: [
-      "Aquí encontrarás las fuentes consultadas para crear esta guía. Todas las referencias siguen el formato APA 7ª edición, el estándar académico más utilizado."
+      "A continuación encontrarás las fuentes consultadas para elaborar esta guía, en formato APA 7ª edición."
     ],
     special: "references-apa",
-    specialContent: `<div class="reference-item">
-      Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., ... & Amodei, D. (2020). <strong>Language models are few-shot learners</strong>. <em>Advances in neural information processing systems</em>, 33, 1877-1901.
-    </div>
-    
-    <div class="reference-item">
-      OpenAI. (2023). <strong>GPT-4 technical report</strong>. <em>arXiv preprint arXiv:2303.08774</em>.
-    </div>
-    
-    <div class="reference-item">
-      Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M. A., Lacroix, T., ... & Lample, G. (2023). <strong>LLaMA: Open and efficient foundation language models</strong>. <em>arXiv preprint arXiv:2302.13971</em>.
-    </div>
-    
-    <div class="reference-item">
-      Weidinger, L., Mellor, J., Rauh, M., Griffin, C., Uesato, J., Huang, P. S., ... & Gabriel, I. (2021). <strong>Ethical and social risks of harm from language models</strong>. <em>arXiv preprint arXiv:2112.04359</em>.
-    </div>
-    
-    <div class="reference-item">
-      Bommasani, R., Hudson, D. A., Adeli, E., Altman, R., Arora, S., von Arx, S., ... & Liang, P. (2021). <strong>On the opportunities and risks of foundation models</strong>. <em>arXiv preprint arXiv:2108.07258</em>.
-    </div>
-    
-    <div class="reference-item">
-      Perez, E., Ringer, S., Lukošiūtė, K., Nguyen, K., Chen, E., Heiner, S., ... & Kaplan, J. (2022). <strong>Discovering language model behaviors with model-written evaluations</strong>. <em>arXiv preprint arXiv:2212.09251</em>.
-    </div>
-    
-    <div class="reference-item">
-      Floridi, L., & Chiriatti, M. (2020). <strong>GPT-3: Its nature, scope, limits, and consequences</strong>. <em>Minds and Machines</em>, 30(4), 681-694.
-    </div>
-    
-    <div class="reference-item">
-      McTear, M., Callejas, Z., & Griol, D. (2016). <strong>The conversational interface: Talking to smart devices</strong>. Springer.
-    </div>
-    
-    <div class="reference-item">
-      Jurafsky, D., & Martin, J. H. (2020). <strong>Speech and language processing: An introduction to natural language processing, computational linguistics, and speech recognition</strong> (3rd ed.). Stanford University.
-    </div>
-    
-    <div class="reference-item">
-      Russell, S., & Norvig, P. (2020). <strong>Artificial intelligence: A modern approach</strong> (4th ed.). Pearson.
-    </div>
-    
-    <div class="reference-item">
-      Goodfellow, I., Bengio, Y., & Courville, A. (2016). <strong>Deep learning</strong>. MIT Press.
-    </div>
-    
-    <div class="reference-item">
-      Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). <strong>Attention is all you need</strong>. <em>Advances in neural information processing systems</em>, 30.
+    specialContent: `<div class="references-apa">
+      <div class="reference-item">Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., ... & Amodei, D. (2020). <strong>Language models are few-shot learners</strong>. <em>Advances in neural information processing systems</em>, 33, 1877-1901.</div>
+      <div class="reference-item">OpenAI. (2023). <strong>GPT-4 technical report</strong>. <em>arXiv preprint arXiv:2303.08774</em>.</div>
+      <div class="reference-item">Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M. A., Lacroix, T., ... & Lample, G. (2023). <strong>LLaMA: Open and efficient foundation language models</strong>. <em>arXiv preprint arXiv:2302.13971</em>.</div>
+      <div class="reference-item">Weidinger, L., Mellor, J., Rauh, M., Griffin, C., Uesato, J., Huang, P. S., ... & Gabriel, I. (2021). <strong>Ethical and social risks of harm from language models</strong>. <em>arXiv preprint arXiv:2112.04359</em>.</div>
+      <div class="reference-item">Bommasani, R., Hudson, D. A., Adeli, E., Altman, R., Arora, S., von Arx, S., ... & Liang, P. (2021). <strong>On the opportunities and risks of foundation models</strong>. <em>arXiv preprint arXiv:2108.07258</em>.</div>
+      <div class="reference-item">Perez, E., Ringer, S., Lukošiūtė, K., Nguyen, K., Chen, E., Heiner, S., ... & Kaplan, J. (2022). <strong>Discovering language model behaviors with model-written evaluations</strong>. <em>arXiv preprint arXiv:2212.09251</em>.</div>
+      <div class="reference-item">Kocoń, J., Cichecki, I., Kaszyca, O., Kochanek, M., Szydło, D., Baran, J., ... & Kazienko, P. (2023). <strong>ChatGPT: Jack of all trades, master of none</strong>. <em>Information Fusion</em>, 99, 101861.</div>
+      <div class="reference-item">Floridi, L., & Chiriatti, M. (2020). <strong>GPT-3: Its nature, scope, limits, and consequences</strong>. <em>Minds and Machines</em>, 30(4), 681-694.</div>
+      <div class="reference-item">McTear, M., Callejas, Z., & Griol, D. (2016). <strong>The conversational interface: Talking to smart devices</strong>. Springer.</div>
+      <div class="reference-item">Jurafsky, D., & Martin, J. H. (2020). <strong>Speech and language processing: An introduction to natural language processing, computational linguistics, and speech recognition</strong> (3rd ed.). Stanford University.</div>
+      <div class="reference-item">Russell, S., & Norvig, P. (2020). <strong>Artificial intelligence: A modern approach</strong> (4th ed.). Pearson.</div>
+      <div class="reference-item">Goodfellow, I., Bengio, Y., & Courville, A. (2016). <strong>Deep learning</strong>. MIT Press.</div>
+      <div class="reference-item">Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., ... & Polosukhin, I. (2017). <strong>Attention is all you need</strong>. <em>Advances in neural information processing systems</em>, 30.</div>
     </div>`
   }
 ];
@@ -342,7 +389,8 @@ let currentPage = 0;
 // ELEMENTOS DEL DOM
 const coverScreen = document.getElementById('cover');
 const bookContainer = document.querySelector('.book-container');
-const toc = document.getElementById('toc');
+const tocPanel = document.getElementById('tocPanel');
+const tocOverlay = document.getElementById('tocOverlay');
 const openBookBtn = document.getElementById('openBook');
 const backToCoverBtn = document.getElementById('backToCover');
 const tocToggleBtn = document.getElementById('tocToggle');
@@ -366,27 +414,24 @@ openBookBtn.addEventListener('click', () => {
 // VOLVER A PORTADA
 backToCoverBtn.addEventListener('click', () => {
   bookContainer.classList.add('hidden');
-  toc.classList.add('hidden');
   setTimeout(() => {
     coverScreen.classList.remove('hidden');
   }, 600);
 });
 
-// TOGGLE ÍNDICE
+// ABRIR/CERRAR ÍNDICE
 tocToggleBtn.addEventListener('click', () => {
-  toc.classList.toggle('hidden');
+  tocPanel.classList.remove('hidden');
+  tocOverlay.classList.remove('hidden');
 });
 
-closeTocBtn.addEventListener('click', () => {
-  toc.classList.add('hidden');
-});
+closeTocBtn.addEventListener('click', closeToc);
+tocOverlay.addEventListener('click', closeToc);
 
-// CERRAR ÍNDICE AL HACER CLICK FUERA
-document.addEventListener('click', (e) => {
-  if (!toc.contains(e.target) && !tocToggleBtn.contains(e.target)) {
-    toc.classList.add('hidden');
-  }
-});
+function closeToc() {
+  tocPanel.classList.add('hidden');
+  tocOverlay.classList.add('hidden');
+}
 
 // ACTUALIZAR PÁGINA
 function updatePage() {
@@ -433,6 +478,9 @@ function updatePage() {
   tocItems.forEach((item, index) => {
     item.classList.toggle('active', index === currentPage);
   });
+  
+  // Cerrar índice si está abierto
+  closeToc();
 }
 
 // NAVEGACIÓN
@@ -459,8 +507,12 @@ document.addEventListener('keydown', (e) => {
     currentPage--;
     updatePage();
   } else if (e.key === 'Escape') {
-    // Presionar ESC para volver a portada
-    backToCoverBtn.click();
+    // Presionar ESC para volver a portada o cerrar índice
+    if (!tocPanel.classList.contains('hidden')) {
+      closeToc();
+    } else {
+      backToCoverBtn.click();
+    }
   }
 });
 
@@ -469,7 +521,6 @@ tocItems.forEach((item, index) => {
   item.addEventListener('click', () => {
     currentPage = index;
     updatePage();
-    toc.classList.add('hidden');
   });
 });
 
@@ -482,4 +533,6 @@ document.addEventListener('mousemove', (e) => {
   const x = (e.clientX / window.innerWidth - 0.5) * 50;
   const y = (e.clientY / window.innerHeight - 0.5) * 50;
   light.style.transform = `translate(${x}%, ${y}%)`;
-});
+}
+
+);

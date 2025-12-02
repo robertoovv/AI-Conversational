@@ -138,43 +138,19 @@ body {
   position: relative;
 }
 
-/* BOTÓN VOLVER A PORTADA */
-.back-to-cover-btn {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  color: var(--text-secondary);
-  font-size: 0.85em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  z-index: 10;
-}
-
-.back-to-cover-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-primary);
-  transform: translateY(-2px);
-}
-
-.back-to-cover-btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* BOTÓN ÍNDICE */
-.toc-toggle-btn {
+/* BOTONES SUPERIORES */
+.top-buttons {
   position: absolute;
   top: 15px;
   right: 15px;
   display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.back-to-cover-btn,
+.toc-toggle-btn {
+  display: flex;
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
@@ -186,15 +162,16 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  z-index: 10;
 }
 
+.back-to-cover-btn:hover,
 .toc-toggle-btn:hover {
   background: rgba(255, 255, 255, 0.1);
   color: var(--text-primary);
   transform: translateY(-2px);
 }
 
+.back-to-cover-btn svg,
 .toc-toggle-btn svg {
   width: 16px;
   height: 16px;
@@ -455,32 +432,30 @@ body {
   transform: scale(1.2);
 }
 
-/* ÍNDICE LATERAL */
-.toc {
+/* ÍNDICE DESPLEGABLE */
+.toc-panel {
   position: fixed;
   top: 0;
-  right: -300px;
+  right: 0;
   width: 300px;
   height: 100vh;
   background: rgba(20, 20, 30, 0.95);
   backdrop-filter: blur(20px);
   border-left: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  z-index: 200;
-  transition: right 0.3s ease;
-  overflow-y: auto;
+  z-index: 2000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
 }
 
-.toc:not(.hidden) {
-  right: 0;
+.toc-panel:not(.hidden) {
+  transform: translateX(0);
 }
 
 .toc-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
+  padding: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -503,22 +478,25 @@ body {
 }
 
 .close-toc-btn svg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 }
 
-.toc ul {
+.toc-list {
+  padding: 20px;
   list-style: none;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
 }
 
 .toc-item {
-  padding: 10px 15px;
+  padding: 12px 16px;
   margin-bottom: 8px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   color: var(--text-secondary);
-  font-size: 0.9em;
+  font-size: 0.95em;
 }
 
 .toc-item:hover {
@@ -529,6 +507,26 @@ body {
 .toc-item.active {
   background: rgba(0, 201, 255, 0.2);
   color: var(--accent);
+}
+
+.toc-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1999;
+  transition: opacity 0.3s ease;
+}
+
+.toc-overlay:not(.hidden) {
+  opacity: 1;
+}
+
+.toc-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .page-transition {
@@ -596,18 +594,8 @@ body {
     font-size: 1.05em;
   }
   
-  .toc {
+  .toc-panel {
     width: 350px;
-    right: -350px;
-  }
-  
-  .toc:not(.hidden) {
-    right: 0;
-  }
-  
-  .toc-item {
-    padding: 12px 18px;
-    font-size: 0.95em;
   }
 }
 
@@ -644,18 +632,8 @@ body {
     font-size: 1.1em;
   }
   
-  .toc {
+  .toc-panel {
     width: 400px;
-    right: -400px;
-  }
-  
-  .toc:not(.hidden) {
-    right: 0;
-  }
-  
-  .toc-item {
-    padding: 15px 20px;
-    font-size: 1em;
   }
 }
 
@@ -706,27 +684,14 @@ body {
     justify-content: center;
   }
   
-  .back-to-cover-btn {
-    top: 10px;
-    left: 10px;
-    padding: 6px 12px;
-    font-size: 0.75em;
-  }
-  
+  .back-to-cover-btn,
   .toc-toggle-btn {
-    top: 10px;
-    right: 10px;
     padding: 6px 12px;
     font-size: 0.75em;
   }
   
-  .toc {
+  .toc-panel {
     width: 100%;
-    right: -100%;
-  }
-  
-  .toc:not(.hidden) {
-    right: 0;
   }
 }
 
@@ -746,8 +711,9 @@ body {
   .cover-screen,
   .back-to-cover-btn,
   .toc-toggle-btn,
+  .toc-panel,
+  .toc-overlay,
   .navigation,
-  .toc,
   .ambient-light {
     display: none !important;
   }
@@ -762,5 +728,198 @@ body {
     box-shadow: none;
     border: 1px solid #ccc;
     page-break-inside: avoid;
+  }
+
+  /* ---- enlace a actividad chatbot ---- */
+  .activity-link-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 100;
+  }
+
+  .activity-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background: var(--primary-gradient);
+    color: #000;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 201, 255, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .activity-link:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* ---------- CAPÍTULO 12 – ACTIVIDAD INTEGRADA ---------- */
+  .glossary-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .glossary-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .glossary-box li {
+    margin: 0.6rem 0;
+    color: var(--text-secondary);
+  }
+
+  .glossary-box strong {
+    color: var(--accent);
+  }
+
+  .activity-card {
+    background: rgba(0, 201, 255, 0.08);
+    border: 1px solid rgba(0, 201, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+  }
+
+  .activity-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .activity-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .activity-card h3 {
+    color: var(--accent);
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .activity-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+  }
+
+  .activity-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    background: var(--primary-gradient);
+    color: #000;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 201, 255, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .activity-btn:hover {
+    transform: translateY(-3px);
+  }
+
+  .cool-phrase {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    font-size: 0.95em;
+    color: var(--text-secondary);
+  }
+
+    /* ---------- Capítulo 12 – Actividad RA ---------- */
+  .intro-activity {
+    text-align: center;
+    font-size: 1.05em;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .activity-card {
+    background: rgba(0, 201, 255, 0.08);
+    border: 1px solid rgba(0, 201, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+  }
+
+  .activity-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .activity-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .activity-card h3 {
+    color: var(--accent);
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .activity-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+  }
+
+  .activity-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    background: var(--primary-gradient);
+    color: #000;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 201, 255, 0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .activity-btn:hover {
+    transform: translateY(-3px);
+  }
+
+  .more-activities {
+    margin-top: 2.5rem;
+  }
+
+  .more-activities h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+  }
+
+  .more-activities ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .more-activities li {
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+    color: var(--text-secondary);
+  }
+
+  .more-activities li::before {
+    content: "▸";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
   }
 }

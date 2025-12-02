@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Actividad: Mi primer Chatbot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="activity.css">
+</head>
+<body>
+  <header class="act-header">
+    <h1>🤖 Actividad: Mi primer Chatbot</h1>
+    <a href="index.html" class="back-link">← Volver al libro</a>
+  </header>
+
+  <main class="act-main">
+    <!-- Explicación rápida -->
+    <section class="act-info">
+      <h2>¿Qué vamos a hacer?</h2>
+      <p>
+        En 5 minutos crearás un chatbot <strong>sin programar</strong>.  
+        Solo necesitas: 1 tema, 3 preguntas y 3 respuestas.  
+        ¡Prueba la herramienta y diviértete!
+      </p>
+    </section>
+
+    <!-- Formulario -->
+    <section class="act-form">
+      <h3>1. Configura tu bot</h3>
+      <label>
+        Tema del chatbot:
+        <input type="text" id="tema" placeholder="Ej: Pokémon, fútbol, música..." value="Pokémon">
+      </label>
+
+      <label>
+        Nombre del bot:
+        <input type="text" id="botName" placeholder="Ej: PokéBot" value="PokéBot">
+      </label>
+
+      <h3>2. Preguntas y respuestas</h3>
+      <div class="qa-pair">
+        <input type="text" class="pregunta" placeholder="Pregunta 1" value="¿Quién es tu pokémon favorito?">
+        <input type="text" class="respuesta" placeholder="Respuesta 1" value="¡Pikachu! Es el más icónico ⚡">
+      </div>
+      <div class="qa-pair">
+        <input type="text" class="pregunta" placeholder="Pregunta 2" value="¿Cuál es el tipo más fuerte?">
+        <input type="text" class="respuesta" placeholder="Respuesta 2" value="Dragón, pero con muchas debilidades 🐉">
+      </div>
+      <div class="qa-pair">
+        <input type="text" class="pregunta" placeholder="Pregunta 3" value="¿Cómo capturo a Mewtwo?">
+        <input type="text" class="respuesta" placeholder="Respuesta 3" value="Con muchas ultra-balls y paciencia 😅">
+      </div>
+
+      <button id="buildBtn" class="build-btn">Crear chatbot ✨</button>
+    </section>
+
+    <!-- Chat de prueba -->
+    <section class="act-chat">
+      <h3>3. Prueba tu bot</h3>
+      <div id="chatBox" class="chat-box">
+        <!-- mensajes dinámicos -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Escribe aquí..." autocomplete="off">
+        <button id="sendBtn">▶️</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="activity.js"></script>
+</body>
+</html>

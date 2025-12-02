@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Actividad: Realidad Aumentada + IA</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: rgba(20, 20, 30, 0.85);
+      --text: #ffffff;
+      --accent: #00c9ff;
+      --grad: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    header h1 {
+      font-size: 1.4rem;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .back-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    main {
+      flex: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .intro-ra {
+      text-align: center;
+      font-size: 1.05em;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .step-card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .step-card h3 {
+      color: var(--accent);
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+    }
+    input, select {
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      margin-top: 0.3rem;
+    }
+    .ar-btn {
+      align-self: center;
+      margin-top: 1rem;
+      background: var(--grad);
+      color: #000;
+      border: none;
+      border-radius: 25px;
+      padding: 0.7rem 1.4rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .ar-btn:hover {
+      transform: translateY(-3px);
+    }
+    #ar-container {
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+    #ar-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .chat-ra {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .chat-ra input {
+      flex: 1;
+    }
+    .chat-ra button {
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      color: #000;
+      cursor: pointer;
+    }
+    .log {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 0.5rem;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Actividad: RA + IA Conversacional</h1>
+  <a href="index.html" class="back-link">← Volver al libro</a>
+</header>
+
+<main>
+
+  <section class="intro-ra">
+    <p>
+      Vas a crear un personaje 3D que aparece en tu habitación y habla contigo en tiempo real. 
+      Solo necesitas tu móvil y un modelo 3D (.glb). ¡Sin programar!
+    </p>
+  </section>
+
+  <!-- PASO 1 – Configuración -->
+  <section class="step-card">
+    <h3>1. Configura tu personaje</h3>
+    <label>
+      Nombre del personaje:
+      <input type="text" id="charName" placeholder="Ej: Pikachu" value="Pikachu">
+    </label>
+    <label>
+      Personalidad (prompt para la IA):
+      <input type="text" id="personality" 
+             placeholder="Eres un Pikachu curioso y amigable que habla con humor y emojis"
+             value="Eres un Pikachu curioso y amigable que habla con humor y emojis ⚡">
+    </label>
+    <label>
+      Modelo 3D (URL .glb):
+      <input type="url" id="modelURL" 
+             placeholder="https://tu-servidor.com/modelo.glb"
+             value="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Pikachu/glTF/Pikachu.glb">
+    </label>
+    <button id="startBtn" class="ar-btn">Iniciar RA + IA ✨</button>
+  </section>
+
+  <!-- PASO 2 – RA + Chat -->
+  <section class="step-card">
+    <h3>2. Punta tu cámara y habla con él/ella</h3>
+    <div id="ar-container"></div>
+    <div class="chat-ra">
+      <input type="text" id="userMsg" placeholder="Di algo...">
+      <button id="sendBtn">▶️</button>
+    </div>
+    <div id="log" class="log"></div>
+  </section>
+
+  <!-- PASO 3 – ¿Qué sigue? -->
+  <section class="step-card">
+    <h3>3. ¿Qué acabas de hacer?</h3>
+    <ul>
+      <li>Detectaste planos con WebXR</li>
+      <li>Colocaste un modelo 3D en RA</li>
+      <li>Conectaste la voz del usuario a un LLM (OpenAI)</li>
+      <li>Recibiste la respuesta y la mostraste en pantalla</li>
+    </ul>
+    <p><strong>Prueba:</strong> cambia el modelo, modifica la personalidad, graba la pantalla y comparte tu creación.</p>
+  </section>
+
+</main>
+
+<script>
+/* ---------- LÓGICA ---------- */
+const charNameInp = document.getElementById('charName');
+const personalityInp = document.getElementById('personality');
+const modelURLInp = document.getElementById('modelURL');
+const startBtn = document.getElementById('startBtn');
+const userMsgInp = document.getElementById('userMsg');
+const sendBtn = document.getElementById('sendBtn');
+const logBox = document.getElementById('log');
+
+let scene, camera, renderer, model, mixer, clock;
+let ARSession = null;
+
+// 1. Iniciar RA + cargar modelo
+startBtn.addEventListener('click', async () => {
+  if (!navigator.xr) {
+    alert('WebXR no disponible. Usa Chrome/Edge Android o Safari iOS.');
+    return;
+  }
+  log('Iniciando WebXR...');
+  ARSession = await navigator.xr.requestSession('immersive-ar', {
+    requiredFeatures: ['hit-test', 'dom-overlay'],
+    domOverlay: { root: document.body }
+  });
+  log('Sesión AR iniciada');
+
+  // Three.js básico
+  clock = new THREE.Clock();
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 1000);
+  renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.xr.enabled = true;
+  document.getElementById('ar-container').appendChild(renderer.domElement);
+
+  // Luces
+  const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
+  scene.add(light);
+
+  // Cargar modelo 3D
+  const loader = new THREE.GLTFLoader();
+  loader.load(modelURLInp.value, gltf => {
+    model = gltf.scene;
+    model.scale.set(0.3, 0.3, 0.3);
+    scene.add(model);
+
+    // Animaciones (si tiene)
+    mixer = new THREE.AnimationMixer(model);
+    if (gltf.animations.length) mixer.clipAction(gltf.animations[0]).play();
+
+    log('Modelo 3D cargado');
+    startChat(); // habilitar chat
+  }, undefined, err => log('Error modelo: ' + err));
+
+  // Bucle render
+  renderer.setAnimationLoop(render);
+});
+
+// 2. Chat con IA (simulado con OpenAI)
+function startChat() {
+  sendBtn.addEventListener('click', async () => {
+    const msg = userMsgInp.value.trim();
+    if (!msg) return;
+    appendChat(msg, 'user');
+    userMsgInp.value = '';
+
+    // Simulación de respuesta (puedes reemplazar por llamada real a OpenAI)
+    const prompt = `Eres ${charNameInp.value}. ${personalityInp.value}\nPregunta: ${msg}\nRespuesta:`;
+    const fakeResp = await fakeOpenAI(prompt);
+    appendChat(fakeResp, 'bot');
+  });
+}
+
+function appendChat(text, sender) {
+  const div = document.createElement('div');
+  div.className = sender;
+  div.textContent = text;
+  logBox.appendChild(div);
+  logBox.scrollTop = logBox.scrollHeight;
+}
+
+async function fakeOpenAI(prompt) {
+  // Respuesta simulada (reemplaza por fetch a OpenAI)
+  const replies = [
+    '¡Buena pregunta! 😊 Yo diría que... ¡sí!',
+    'Hmm, depende del contexto, pero en general... ¡exacto!',
+    '¡Claro! Mi recomendación es que pruebes y veas qué pasa ⚡',
+    'Uf, eso es difícil, pero yo lo veo así: ¡dale caña!'
+  ];
+  await new Promise(r => setTimeout(r, 800));
+  return replies[Math.floor(Math.random() * replies.length)];
+}
+
+// 3. Render loop
+function render(timestamp, frame) {
+  if (mixer) mixer.update(clock.getDelta());
+  if (ARSession && frame) {
+    const refSpace = ARSession.requestReferenceSpace('local-floor');
+    const pose = frame.getViewerPose(refSpace);
+    if (pose) {
+      const view = pose.views[0];
+      camera.matrix.fromArray(view.transform.matrix);
+      camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
+    }
+  }
+  renderer.render(scene, camera);
+}
+
+// Utilidad
+function log(msg) {
+  const p = document.createElement('div');
+  p.textContent = msg;
+  logBox.appendChild(p);
+}
+</script>
+
+<!-- Three.js + WebXR polyfill (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.157.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.min.js"></script>
+</body>
+</html>
